@@ -64,12 +64,16 @@ class War {
     }
     
     vikingAttack(){
-        saxon.receiveDamage(viking.strength);
-        const result = this.saxonArmy.filter(health => saxon.health >= 1);
+        this.saxonArmy[0].receiveDamage(this.vikingArmy[0].strength);
+        const result = this.saxonArmy.filter(saxon => saxon.health >= 1);
         return result;
     }
     
-    // saxonAttack(){}
+    saxonAttack(){
+        this.vikingArmy[0].receiveDamage(this.saxonArmy[0].strength);
+        const result = this.vikingArmy.filter(viking => viking.health >= 1);
+        return result;        
+    }
     
     // showStatus(){}
 }
